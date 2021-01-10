@@ -2,7 +2,7 @@ import React from 'react';
 import { TextField, Button, Switch } from '@material-ui/core';
 import './Login.css'
 
-const Login = () => {
+const Register = () => {
 
     return (
         <form className='login-form'>
@@ -14,4 +14,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Register;

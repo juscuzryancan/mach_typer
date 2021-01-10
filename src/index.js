@@ -4,7 +4,9 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import {
   Header,
-  Login
+  Login,
+  Register,
+  Textbox
 } from './components';
 
 const App = () => {
@@ -13,6 +15,7 @@ const App = () => {
     <Router>
       <Header />
       <Route path='/'>
+        <Textbox />
       </Route>
       <Route exact path='/leaderboards'>
       </Route>
@@ -20,6 +23,7 @@ const App = () => {
         <Login />
       </Route>
       <Route exact path='/register'>
+        <Register />
       </Route>
     </Router>
   );
