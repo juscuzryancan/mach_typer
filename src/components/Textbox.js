@@ -1,21 +1,16 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Textbox = () => {
-
-    const div = useRef(null);
+    const [text, setText] = useState('');
 
     useEffect(() => {
-        window.addEventListener('keydown', div, () => {
-            console.log('use effect log');
+        document.addEventListener('keydown', (e) => {
+            console.log(e.key);
         })
     }, [])
 
-    const handleKeyDown = () => {
-        console.log('key pressed');
-    }
-
     return (
-        <div ref={div} className="text-box" onKeyDown={handleKeyDown}>Random Text</div>
+        <div className="text-box">{text}</div>
     )
 }
 
