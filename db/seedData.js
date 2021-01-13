@@ -4,8 +4,8 @@ const dropTables = async () => {
     console.log('Dropping All Tables...');
     try {
         await client.query(`
-            DROP IF EXISTS tests;
-            DROP IF EXISTS users;
+            DROP TABLE IF EXISTS tests; 
+            DROP TABLE IF EXISTS users;
         `)
         console.log('Successfully Dropped All Tables');
     } catch (error) {
@@ -26,7 +26,7 @@ const createTables = async () => {
 
             CREATE TABLE tests(
                 id SERIAL PRIMARY KEY,
-                "userId" INTEGER REFERENCES user(id),
+                "userId" INTEGER REFERENCES users(id),
                 timeConstraint INTEGER,
                 wordConstraint INTEGER,
                 wpm INTEGER
@@ -41,6 +41,8 @@ const createTables = async () => {
 const rebuildDB = async () => {
     try {
         client.connect();
+        await dropTables();
+        await createTables();
     } catch (error) {
         console.error('Error during rebuildDB');
         throw error;
