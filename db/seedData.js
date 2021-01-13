@@ -1,4 +1,4 @@
-const client = require('./client');
+const client = require('./');
 
 const dropTables = async () => {
     console.log('Dropping All Tables...');
