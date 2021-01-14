@@ -2,10 +2,10 @@ const router = require('express').Router();
 const {
     createUser,
     getUser,
-} = require('../db');
+} = require('../../db');
 
 router.post('/', async (req, res, next) => {
-    const {username, password} = req;
+    const {username, password} = req.body;
     try {
         const user = await createUser({username, password});
         res.send(user);
