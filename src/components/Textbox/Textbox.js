@@ -7,6 +7,8 @@ const Textbox = () => {
         document.addEventListener('keydown', (e) => {
             console.log(e.key);
         })
+
+        setText('hello how there many world post the how panic time very accurate pour drink world more the can you please lost life always a world');
     }, [])
 
     return (

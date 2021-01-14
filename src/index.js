@@ -6,7 +6,8 @@ import {
   Header,
   Login,
   Register,
-  Textbox
+  Textbox,
+  Caret
 } from './components';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <Header />
       <Route path='/'>
         <Textbox />
+        <Caret /> 
       </Route>
       <Route exact path='/leaderboards'>
       </Route>

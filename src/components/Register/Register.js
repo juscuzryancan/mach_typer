@@ -1,6 +1,5 @@
 import React from 'react';
 import { TextField, Button, Switch } from '@material-ui/core';
-import './Login.css'
 
 const Register = () => {
 
