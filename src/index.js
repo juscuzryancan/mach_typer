@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <Route path='/'>
+      <Route exact path='/'>
         <Textbox />
         <Caret /> 
       </Route>

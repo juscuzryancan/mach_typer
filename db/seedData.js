@@ -1,4 +1,4 @@
-const client = require('./');
+const { client } = require('./');
 
 const dropTables = async () => {
     console.log('Dropping All Tables...');
@@ -40,7 +40,14 @@ const createTables = async () => {
 
 const rebuildDB = async () => {
     try {
-        client.connect();
+        client.connect((err) => {
+            if (err) {
+                console.error('Error connecting to the database');
+                console.error(err);
+            } else {
+                console.log('Successfully connected');
+            }
+        });
         await dropTables();
         await createTables();
     } catch (error) {
