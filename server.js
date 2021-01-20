@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const server = express();
 
-const client = require('./db/client');
+const { client } = require('./db');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 

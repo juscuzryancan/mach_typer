@@ -1,15 +1,24 @@
-import React from 'react';
-import { TextField, Button, Switch } from '@material-ui/core';
+import React, {useState} from 'react';
+import { TextField, Button, Card } from '@material-ui/core';
+import { register } from '../../api';
 import './Register.css'
 
 const Register = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const handleRegister = (e) => {
+        e.preventDefault();
+        register(username, password);
+        console.log('pressing bubmit');
+    }
 
     return (
-        <form className='register-form'>
-            <TextField required variant='outlined' placeholder='Username'></TextField>
-            <TextField required variant='outlined' placeholder='Password'></TextField>
-            <Switch />   
-            <Button>Login</Button>
+        <form onSubmit={handleRegister}>
+            <p>Create Your Account</p>
+            <TextField onChange={(e) => setUsername(e.target.value)} required variant='outlined' placeholder='Username'></TextField>
+            <TextField onChange={(e) => setPassword(e.target.value)} required variant='outlined' placeholder='Password'></TextField>
+            <TextField onChange={(e) => setPassword(e.target.value)} required variant='outlined' placeholder='Verify Password'></TextField>
+            <Button type='submit'>Register</Button>
         </form>
     );
 }
