@@ -17,7 +17,6 @@ const App = () => {
       <Header />
       <Route exact path='/'>
         <Textbox />
-        <Caret /> 
       </Route>
       <Route exact path='/leaderboards'>
       </Route>
