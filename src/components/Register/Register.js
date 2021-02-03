@@ -9,12 +9,10 @@ const Register = () => {
     const handleRegister = (e) => {
         e.preventDefault();
         register(username, password);
-        console.log('pressing bubmit');
     }
 
     return (
-        <form onSubmit={handleRegister}>
-            <p>Create Your Account</p>
+        <form className="register-form" onSubmit={handleRegister}>
             <TextField onChange={(e) => setUsername(e.target.value)} required variant='outlined' placeholder='Username'></TextField>
             <TextField onChange={(e) => setPassword(e.target.value)} required variant='outlined' placeholder='Password'></TextField>
             <TextField onChange={(e) => setPassword(e.target.value)} required variant='outlined' placeholder='Verify Password'></TextField>
